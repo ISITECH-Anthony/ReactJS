@@ -1,0 +1,21 @@
+.page__loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader__circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid #e50914;
+        border-top-color: transparent;
+        animation: loader 1s infinite ease-in-out;
+        margin: 0 auto;
+
+        @keyframes loader {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

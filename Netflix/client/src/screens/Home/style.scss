@@ -1,0 +1,47 @@
+
+.page__home {
+    .banner {
+        height: 65vh;
+        display: flex;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .layer {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            .information {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 40px;
+                // width: 80%;
+                height: 100%;
+                // background-color: blue;
+    
+                img {
+                    max-width: 20%;
+                }
+    
+                .description {
+                    width: 40%;
+                    font-size: 13px;
+                }
+    
+                .buttons {
+                    margin-top: 10px;
+    
+                    button {
+                        &:first-of-type {
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

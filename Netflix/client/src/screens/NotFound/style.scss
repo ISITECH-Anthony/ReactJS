@@ -1,0 +1,14 @@
+.page__not_found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .page__content {
+        h1 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    }
+}

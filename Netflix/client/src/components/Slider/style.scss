@@ -1,0 +1,149 @@
+.slider {
+    margin: 50px 40px 0 40px;
+
+    &:last-of-type {
+        margin-bottom: 75px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-end;
+
+        h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            margin-bottom: 2px;
+            margin-left: 15px;
+            color: #54b9c5;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+
+            svg {
+                font-size: 10px;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        &__item {
+            position: relative;
+            min-width: 250px;
+            min-height: 150px;
+            max-width: 250px;
+            max-height: 150px;
+            border-radius: 4px;
+            margin-right: 15px;
+            animation: loading 1s infinite;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &__content {
+                height: 100%;
+                width: 100%;
+                padding: 10px 15px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: rgba(0, 0, 0, 0.8);
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+
+                &__information {
+                    .information__title {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #fff;
+                        margin-bottom: 10px;
+                    }
+
+                    .information__overview {
+                        font-size: 13px;
+                        color: #fff;
+                    }
+                }
+
+                &__buttons {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
+            &:hover {
+                &:not(.slider__content__item__fake) {
+                    .slider__content__item__content {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @keyframes loading {
+                0% {
+                    background-color: #222;
+                }
+
+                50% {
+                    background-color: #333;
+                }
+
+                100% {
+                    background-color: #222;
+                }
+            }
+        }
+
+        &.error {
+            width: 100%;
+            // height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 50px;
+
+            svg {
+                font-size: 40px;
+            }
+
+            p {
+                margin-top: 20px;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+
+    &:hover {
+        .slider__title {
+            button {
+                opacity: 1;
+            }
+        }
+    }
+}
